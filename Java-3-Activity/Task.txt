@@ -1,0 +1,13 @@
+Lesson 3 Actvity
+class Main {
+  public static void main(String[] args) {
+    (new Main()).init();
+  }
+
+Task:
+void init(){
+Print your full name}
+Print your full name with your full address
+Print your full name with your full address using only one print statement (challenge).
+
+Submit the link of the Repl project when you are done with the assignment.
