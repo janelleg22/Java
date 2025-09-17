@@ -9,7 +9,7 @@ class Main {
   void init(){
     System.out.println("Janelle Gonzalez");
     System.out.println("Janelle Gonzale, 123  java ave");
-    System.out.println("Janelle Gonzalez\n 123  java ave");
+    System.out.println("Janelle Gonzalez\n123  java ave");
 
   }
 
