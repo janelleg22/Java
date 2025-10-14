@@ -92,7 +92,7 @@ class Main {
     BMI of 40.0 or more:  return  Obese 
 */
   // String BMI(double weight, double height) {
-  //   double bmi = (weight * 703) / (height * height);
+  //   double bmi = weight/Math.pow(height,2)*703;
     
   //   if (bmi <= 18.4) {
   //       return "Underweight";
