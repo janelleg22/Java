@@ -18,7 +18,8 @@ class Main {
   */
 void range(int start, int end,int step){
     System.out.println(start+", "+end +", "+step);
-    for(int x=start; x<=end; x+=step){
+    for(int x=start;
+     x<=end; x+=step){
       System.out.print(x+" ");
     }
     System.out.println();
