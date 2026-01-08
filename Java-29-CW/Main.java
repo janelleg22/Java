@@ -17,10 +17,6 @@ class Main {
           System.out.println("woof");
         }
       }
-
-    // make dogs bark (invoke function)
-         
-   
     Dog Scooby = new Dog();
     Scooby.bark();
   }
