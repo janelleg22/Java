@@ -1,4 +1,4 @@
-class Dog{
+  class Dog{
   // class properties (variables)
   String breed;
   int age;
