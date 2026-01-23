@@ -28,7 +28,7 @@ class Main {
   }
 	
 	//5: subtotal (for all quantities of all items in cart, using discounted prices)
-  double subtotal = item1.getPrice()	
+  double subtotal = item1.getPrice();
 	// display subtotal, tax and total
     
   }
