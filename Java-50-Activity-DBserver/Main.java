@@ -27,7 +27,7 @@ class Main {
   void print(Object o){ System.out.println(o);}
   void printt(Object o){ System.out.print(o);}
 
-  void init() throws IOException{
+  void init() throws IOException{   
 
     // Create a port - this is your Gateway
     int port = 8500;
@@ -38,42 +38,48 @@ class Main {
     // Create the database object
     Database db = new Database("jdbc:sqlite:chinook.db");
     
-    // For all problems below, limit query to about 5 records and only pull up required fields (columns)    
-
-    // Problem 1: Create a default route that serves the message: "You are connected, but route not given or incorrect....";
+    // Default route    
     server.createContext("/", new RouteHandler("You are connected, but route not given or incorrect....") );
 
-    // Problem 2: Create a route called 'customers' that gets the ID, First name, Last name and Phone# for the first 5 entries of the Customers table.
+    /* GOAL: To create a webpage that will display a card for each track(song) in the 'tracks' table from the Chinook database. (See picture "chinookDBdiagram.JPG").
+
+    PART 1: Build a database server with the route you will need to serve the required information from the DB. Test your route to make sure that it is working correctly.
+
+    For Part 2, see "Activity50-Website".
+    */
+
+    // Add your code here.....see Problem.txt file for tasks
+    //1
+    server.createContext("/", new RouteHandler("You are connected, but route not given or incorrect....") );
+    //2
     String sql = "";
-    sql  = " Select customers.customerId, customers.firstname, customers.lastname, customers.phone from Customers ";
-    //sql += " LIMIT 15 ";
+    sql  = " Select * from customers ";
     server.createContext("/customers", new RouteHandler(db,sql) ) ;
-
-    // Problem 3: Create a route called 'employees' that gets Employee ID and Title of the first 5 entries in the Employees table.
-    // sql  = " Select employees.employeeID, employees.title from employees ";
+    //3
+    String sql = "";
     sql  = " Select * from employees ";
-    sql += " LIMIT 15 ";
     server.createContext("/employees", new RouteHandler(db,sql) ) ;
-
-    // Problem 4: Create a route called 'albumsinfo' that gets the albums with the track information and artists information. (Limit to 5 records)
+    //4
     sql  = " Select * From tracks ";
     sql += " Inner Join albums ON albums.albumid=tracks.albumid ";
     sql += " Inner Join artists ON albums.artistid=artists.artistid ";
     sql += " LIMIT 15 ";
     server.createContext("/albumsinfo", new RouteHandler(db,sql) );
-
-    // Problem 5: Create a route called 'customersongs' that gets customer first & last names, song names and date of purchase (i.e., Invoice Date) of each song. (Limit to 5 records)
+    //5
     sql  = " Select customers.firstname, customers.lastname, tracks.name, invoices.invoicedate From tracks ";
     sql += " Inner Join invoice_items ON invoice_items.trackid=tracks.trackid ";
     sql += " Inner Join invoices ON invoices.invoiceid=invoice_items.invoiceid ";
     sql += " Inner Join customers ON invoices.customerid=customers.customerid ";
-    sql += " LIMIT 15 ";
-    server.createContext("/customersongs", new RouteHandler(db,sql) );
+    server.createContext("/songs", new RouteHandler(db,sql) );
+
 
     
+  
     // Start the server      
     server.start();
-    System.out.println("Server is listening on port " + port);        
+    System.out.println("Server is listening on port " + port);       
       
   }    
 }
+
+
