@@ -49,37 +49,38 @@ class Main {
     */
 
     // Add your code here.....see Problem.txt file for tasks
-    //1
-    server.createContext("/", new RouteHandler("You are connected, but route not given or incorrect....") );
-    //2
-    String sql = "";
-    sql  = " Select * from customers ";
-    server.createContext("/customers", new RouteHandler(db,sql) ) ;
-    //3
-    String sql = "";
-    sql  = " Select * from employees ";
-    server.createContext("/employees", new RouteHandler(db,sql) ) ;
-    //4
-    sql  = " Select * From tracks ";
-    sql += " Inner Join albums ON albums.albumid=tracks.albumid ";
-    sql += " Inner Join artists ON albums.artistid=artists.artistid ";
-    sql += " LIMIT 15 ";
-    server.createContext("/albumsinfo", new RouteHandler(db,sql) );
-    //5
-    sql  = " Select customers.firstname, customers.lastname, tracks.name, invoices.invoicedate From tracks ";
-    sql += " Inner Join invoice_items ON invoice_items.trackid=tracks.trackid ";
-    sql += " Inner Join invoices ON invoices.invoiceid=invoice_items.invoiceid ";
-    sql += " Inner Join customers ON invoices.customerid=customers.customerid ";
-    server.createContext("/songs", new RouteHandler(db,sql) );
 
+    //1
+   server.createContext("/", new RouteHandler("You are connected, but route not given or incorrect....") );
+
+    //2
+   String sql = "";
+   sql = " Select * from customers ";
+   server.createContext("/customers", new RouteHandler(db,sql) );
 
     
+    //3
+   sql = " Select * from employees ";
+   server.createContext("/employees", new RouteHandler(db,sql) );
   
+    //4
+   sql  = " Select * From tracks ";
+   sql += " Inner Join albums ON albums.albumid=tracks.albumid ";
+   sql += " Inner Join artists ON albums.artistid=artists.artistid ";
+   sql += " LIMIT 15 ";
+   server.createContext("/albumsinfo", new RouteHandler(db,sql) );
+
+    //5
+   sql  = " Select customers.firstname, customers.lastname, tracks.name, invoices.invoicedate From tracks ";
+   sql += " Inner Join invoice_items ON invoice_items.trackid=tracks.trackid ";
+   sql += " Inner Join invoices ON invoices.invoiceid=invoice_items.invoiceid ";
+   sql += " Inner Join customers ON invoices.customerid=customers.customerid ";
+   server.createContext("/songs", new RouteHandler(db,sql) );
+
     // Start the server      
     server.start();
     System.out.println("Server is listening on port " + port);       
       
   }    
 }
-
 

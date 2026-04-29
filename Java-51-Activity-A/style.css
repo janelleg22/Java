@@ -39,7 +39,7 @@ nav a:hover{
   right: 0;
   bottom:0px;
 }
- 
+
 
 .highlight{
   font-style:italic;
@@ -62,24 +62,38 @@ nav a:hover{
 #panel{
   flex:1;
 }
-
+.fitted{
+  max-width:200px;
+  min-width:200px;
+}
 .card img{
   width:90%;
 }
-.filter{
-  display:flex;
-  background-color: #dff2ff;
-  border:1px solid black;
-  
-}
 #output{
   display:flex;
-
+  flex-wrap: wrap;
+  align-items: center;
 }
 .card{
-  flex:1;
+  /*flex:1; can create uneven cards*/
+  width: 250px;
   margin:5px;
   padding:5px;
   border:1px solid gray;
   text-align:center;
+  background-color: beige;
+}
+
+/* CSS Style to create a button */
+
+.button{
+  text-decoration:none;
+  background-color:blue;
+  color:white;
+  border-radius:4px;
+  padding:6px;
+  box-shadow:2px 2px 2px black;
+}
+.button:hover{
+  background-color:cornflowerblue;
 }
