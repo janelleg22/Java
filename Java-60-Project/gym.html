@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>54-Actvy Soln: Home</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <!-- Call the int function when website loads -->
+  <body>
+    <div>
+      <!--  Header or Banner -->
+      <div id="header">
+        <h1> Database Project Website - Fitness (Janelle Gonzalez & Abigail Ho)</h1>
+      </div>
+
+      <!--  nav bar -->
+      <nav id='nav'>
+
+        <a href="index.html" class="button">HOME</a>   
+        <a href="gym.html" class="button">GYM</a> 
+        <a href="trainer.html" class="button">TRAINER</a>
+        <a href="workout.html" class="button">WORKOUT</a>
+      </nav>
+      
+      <div class="container">
+        
+
+        <div id='centerpanel2'>
+    
+      <div class="container filter">
+      <div class ="left-search">
+
+        <h2> Search for Gyms by Name </h2>
+        <input type="text" id="name" placeholder="Enter Name" >        
+        <a class="button" onclick="filterByName()">Search </a><br>
+
+        <h2> Search for Gyms by Gym Id </h2>
+        <input type="text" id="gymid" placeholder="Enter Gym Id" >        
+        <a class="button" onclick="filterByGymId()">Search </a><br>
+      </div>
+        <div class ="right-search">
+
+        <h2> Search for Gyms by Price </h2>
+        <input type="text" id="price" placeholder="Enter Price" >        
+        <a class="button" onclick="filterByPrice()">Search </a><br>
+
+        <h2> Search for Gyms by Distance </h2>
+        <input type="text" id="distance" placeholder="Enter Distance" >        
+        <a class="button" onclick="filterByDistance()">Search </a><br>
+      </div>
+    </div>
+  
+    <div id="cardContainer"></div>
+
+
+        </div>
+        
+
+        
+      </div>
+
+      <!--  Footer -->
+      <div id='footer'>
+        <h3> Find the Perfect Gym, Trainer and Workouts to better yourself! </h3>
+      </div>
+
+    </div>
+    <script src="gym.js"></script>
+  </body>
+</html>
